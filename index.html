@@ -46,7 +46,8 @@
         <div class="ring ring-a"></div>
         <div class="ring ring-b"></div>
         <div class="asset-frame">
-          <img id="featureAsset" class="feature-asset asset-nvda" alt="Featured asset" />
+          <img id="featureAssetA" class="feature-asset asset-nvda asset-layer is-visible" alt="Featured asset" />
+          <img id="featureAssetB" class="feature-asset asset-nvda asset-layer" alt="Featured asset" />
         </div>
         <div class="asset-caption">
           <span id="featureLabel">NVIDIA</span>
@@ -66,7 +67,10 @@
       <div class="story-grid">
         <div class="story-sticky">
           <div class="story-stage">
-            <img id="storyImage" class="story-image asset-nvda" alt="Stock asset" />
+            <div class="story-image-wrap">
+              <img id="storyImageA" class="story-image asset-nvda asset-layer is-visible" alt="Stock asset" />
+              <img id="storyImageB" class="story-image asset-nvda asset-layer" alt="Stock asset" />
+            </div>
             <div class="story-stage-copy">
               <span class="story-mini">NEXT ASSET</span>
               <h2 id="storyName">NVIDIA</h2>
@@ -132,7 +136,7 @@
       </div>
     </section>
 
-    <section class="impact reveal">
+    <section id="impactSection" class="impact reveal is-hidden">
       <div class="impact-number"><span>$</span><strong id="totalDropped">—</strong></div>
       <div class="impact-copy">
         <span>TOTAL DROPPED</span>
@@ -154,9 +158,9 @@
         </article>
         <article class="step-card">
           <div class="step-no">02</div>
-          <div class="mini-3d cube-wrap"><div class="cube">
-            <b class="front">NVDA</b><b class="back">META</b><b class="right">AAPL</b><b class="left">AMZN</b><b class="top">DROP</b><b class="bottom">$</b>
-          </div></div>
+          <div class="mini-3d block-wrap">
+            <img id="stockBlock" class="stock-block" alt="3D stock block" />
+          </div>
           <h3>ASSET BUYS</h3>
           <p>The pool converts into the selected Stock Token when the target is reached.</p>
         </article>

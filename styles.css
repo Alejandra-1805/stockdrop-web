@@ -87,3 +87,20 @@ footer{padding:28px 34px;display:flex;justify-content:space-between;font:10px "S
  .step-card{min-height:390px}.machine-head,.history-head{display:block}.history-row{grid-template-columns:.5fr 1fr 1fr}.history-row span:nth-child(4),.history-row span:nth-child(5){display:none}
  .feed-line{grid-template-columns:70px 1fr}.feed-line .amt{display:none} footer{padding:22px 20px;gap:10px;flex-direction:column}
 }
+
+.asset-frame{overflow:visible}
+.asset-layer{position:absolute;inset:auto;opacity:0;transition:opacity .7s ease,transform .9s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
+.asset-layer.is-visible{opacity:1}
+.story-image-wrap{position:relative;min-height:54vh;width:100%;display:grid;place-items:center}
+.story-image-wrap .story-image{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
+.story-image-wrap .story-image.asset-nvda{animation:gpuFloatStory 7s ease-in-out infinite}
+.story-image-wrap .story-image.asset-meta{animation:metaSpinStory 14s linear infinite}
+.story-image-wrap .story-image.asset-aapl{animation:appleFloatStory 7s ease-in-out infinite}
+.story-image-wrap .story-image.asset-amzn{animation:boxShiftStory 7s ease-in-out infinite}
+.block-wrap{perspective:900px}.stock-block{width:min(86%,270px);max-height:220px;object-fit:contain;filter:drop-shadow(0 24px 30px rgba(0,0,0,.45));animation:blockTurn 8s ease-in-out infinite;transform-style:preserve-3d}
+.is-hidden{display:none!important}
+@keyframes blockTurn{0%,100%{transform:rotateX(3deg) rotateY(-10deg) translateY(0)}50%{transform:rotateX(-4deg) rotateY(12deg) translateY(-10px)}}
+@keyframes gpuFloatStory{0%,100%{transform:translate(-50%,-50%) rotate(-4deg)}50%{transform:translate(-50%,-53%) rotate(2deg)}}
+@keyframes metaSpinStory{0%,100%{transform:translate(-50%,-50%) rotate(0deg)}50%{transform:translate(-50%,-53%) rotate(12deg)}}
+@keyframes appleFloatStory{0%,100%{transform:translate(-50%,-50%) rotate(-4deg)}50%{transform:translate(-50%,-53%) rotate(4deg)}}
+@keyframes boxShiftStory{0%,100%{transform:translate(-50%,-50%) rotate(-3deg)}50%{transform:translate(-50%,-53%) rotate(3deg)}}
