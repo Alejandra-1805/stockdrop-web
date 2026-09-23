@@ -2,7 +2,7 @@ const CONFIG = {
   contractAddress: "COMING_SOON",
   xUrl: "#",
   targetUsd: 100,
-  demoPool: 84.27,
+  demoPool: 0,
   apiBase: ""
 };
 
@@ -70,9 +70,12 @@ function renderPool(value){
 
 async function loadLive(){
   if(!CONFIG.apiBase){
-    renderPool(CONFIG.demoPool);
+    poolValue.textContent = "—";
+    barFill.style.width = "0%";
+    percentLabel.textContent = "LIVE DATA";
+    status.textContent = "WAITING FOR LIVE DATA";
     addFeed("", "WAITING FOR LIVE API CONNECTION", "NO SIMULATION");
-    addFeed("", "UI READY — ONCHAIN DATA DISABLED", "");
+    addFeed("", "NO VALUES DISPLAYED UNTIL VERIFIED ONCHAIN", "");
     return;
   }
   try{
