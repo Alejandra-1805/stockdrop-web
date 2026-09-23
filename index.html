@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,6 +16,7 @@
   <header class="topbar">
     <a class="brand" href="#top">STOCK<span>DROP</span></a>
     <div class="nav">
+      <a href="#story">ASSETS</a>
       <a href="#how">HOW IT WORKS</a>
       <a href="#history">DROPS</a>
       <button id="soundBtn" class="sound-btn" aria-label="Toggle sound">SOUND OFF</button>
@@ -31,10 +33,10 @@
           <span class="drop-word">DROP.</span>
         </h1>
         <p class="hero-sub">
-          Creator fees build the pool. When the target hits, the next asset drops.
+          Scroll down to cycle through the assets StockDrop can distribute.
         </p>
         <div class="hero-actions">
-          <a class="primary" href="#drop">WATCH THE DROP</a>
+          <a class="primary" href="#story">SEE THE ASSETS</a>
           <button class="ghost" id="copyCa">COPY CA</button>
         </div>
       </div>
@@ -43,17 +45,14 @@
         <div class="stage-floor"></div>
         <div class="ring ring-a"></div>
         <div class="ring ring-b"></div>
-        <div class="asset-card card-main">
-          <div class="asset-logo">N</div>
-          <div class="asset-meta">
-            <span>NVIDIA</span>
-            <strong>NVDA</strong>
-          </div>
-          <div class="asset-tag">NEXT DROP</div>
+        <div class="asset-frame">
+          <img id="featureAsset" class="feature-asset asset-nvda" alt="Featured asset" />
         </div>
-        <div class="asset-chip chip-a">AAPL</div>
-        <div class="asset-chip chip-b">META</div>
-        <div class="asset-chip chip-c">TSLA</div>
+        <div class="asset-caption">
+          <span id="featureLabel">NVIDIA</span>
+          <strong id="featureTicker">NVDA</strong>
+          <p id="featureType">AI compute exposure</p>
+        </div>
         <div class="shadow"></div>
       </div>
 
@@ -63,25 +62,67 @@
       </div>
     </section>
 
+    <section id="story" class="story">
+      <div class="story-grid">
+        <div class="story-sticky">
+          <div class="story-stage">
+            <img id="storyImage" class="story-image asset-nvda" alt="Stock asset" />
+            <div class="story-stage-copy">
+              <span class="story-mini">NEXT ASSET</span>
+              <h2 id="storyName">NVIDIA</h2>
+              <div class="story-line">
+                <span id="storyTicker">NVDA</span>
+                <span id="storyTag">AI INFRASTRUCTURE</span>
+              </div>
+              <p id="storyText">NVIDIA can headline the first rotation. The GPU image moves as the user scrolls and introduces the idea of a real stock token drop.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-steps">
+          <article class="asset-step is-active" data-key="nvda">
+            <span class="step-index">01</span>
+            <h3>NVIDIA</h3>
+            <p>Start with a strong visual asset. The GPU should float, shift and feel physical — not like a flat icon. This can represent the first live rotation.</p>
+          </article>
+          <article class="asset-step" data-key="meta">
+            <span class="step-index">02</span>
+            <h3>META</h3>
+            <p>As the user scrolls, switch to META and rotate the logo gently in space. It should feel clean, premium and alive.</p>
+          </article>
+          <article class="asset-step" data-key="aapl">
+            <span class="step-index">03</span>
+            <h3>APPLE</h3>
+            <p>Then transition to Apple. Keep the chrome-like logo floating and slightly rocking while the text updates to the next asset in the drop sequence.</p>
+          </article>
+          <article class="asset-step" data-key="amzn">
+            <span class="step-index">04</span>
+            <h3>AMAZON</h3>
+            <p>Finish with Amazon. The stacked boxes make the sequence feel less repetitive and suggest variety in the rewards basket.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="drop" class="drop-panel reveal">
       <div class="section-label">LIVE DROP</div>
       <div class="drop-grid">
         <div>
           <div class="status-row">
             <span class="pulse"></span>
-            <span id="dropStatus">BUILDING POOL</span>
+            <span id="dropStatus">WAITING FOR LIVE DATA</span>
           </div>
-          <h2>THE NEXT DROP<br><span id="assetName">NVDA</span></h2>
-          <p class="muted">One target. One asset. Every eligible holder shares the drop.</p>
+          <h2>THE NEXT DROP<br><span id="assetName">WAITING</span></h2>
+          <p class="muted">No numbers are shown until the live backend is connected and verified onchain.</p>
         </div>
 
         <div class="meter-card">
           <div class="meter-top">
             <span>DROP POOL</span>
-            <span id="percentLabel">84%</span>
+            <span id="percentLabel">LIVE DATA</span>
           </div>
-          <div class="amount">
-            <span>$</span><strong id="poolValue">84.27</strong>
+          <div class="amount amount-waiting">
+            <strong id="poolValue">—</strong>
           </div>
           <div class="bar"><div id="barFill" class="bar-fill"></div></div>
           <div class="meter-bottom">
@@ -92,10 +133,10 @@
     </section>
 
     <section class="impact reveal">
-      <div class="impact-number"><span>$</span><strong id="totalDropped">12,482</strong></div>
+      <div class="impact-number"><span>$</span><strong id="totalDropped">—</strong></div>
       <div class="impact-copy">
         <span>TOTAL DROPPED</span>
-        <p>Not points. Not fake balances. Confirmed distributions only.</p>
+        <p>Numbers appear here only after the StockDrop backend begins recording real distributions.</p>
       </div>
     </section>
 
@@ -114,7 +155,7 @@
         <article class="step-card">
           <div class="step-no">02</div>
           <div class="mini-3d cube-wrap"><div class="cube">
-            <b class="front">NVDA</b><b class="back">META</b><b class="right">AAPL</b><b class="left">TSLA</b><b class="top">DROP</b><b class="bottom">$</b>
+            <b class="front">NVDA</b><b class="back">META</b><b class="right">AAPL</b><b class="left">AMZN</b><b class="top">DROP</b><b class="bottom">$</b>
           </div></div>
           <h3>ASSET BUYS</h3>
           <p>The pool converts into the selected Stock Token when the target is reached.</p>
