@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <title>StockDrop — Hold. Wait. Drop.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#top">STOCK<span>DROP</span></a>
+    <div class="nav">
+      <a href="#how">HOW IT WORKS</a>
+      <a href="#history">DROPS</a>
+      <button id="soundBtn" class="sound-btn" aria-label="Toggle sound">SOUND OFF</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A TOKEN THAT DROPS REAL ASSETS TO HOLDERS</p>
+        <h1>
+          HOLD.
+          <span class="line-shift">WAIT.</span>
+          <span class="drop-word">DROP.</span>
+        </h1>
+        <p class="hero-sub">
+          Creator fees build the pool. When the target hits, the next asset drops.
+        </p>
+        <div class="hero-actions">
+          <a class="primary" href="#drop">WATCH THE DROP</a>
+          <button class="ghost" id="copyCa">COPY CA</button>
+        </div>
+      </div>
+
+      <div class="hero-stage" aria-hidden="true">
+        <div class="stage-floor"></div>
+        <div class="ring ring-a"></div>
+        <div class="ring ring-b"></div>
+        <div class="asset-card card-main">
+          <div class="asset-logo">N</div>
+          <div class="asset-meta">
+            <span>NVIDIA</span>
+            <strong>NVDA</strong>
+          </div>
+          <div class="asset-tag">NEXT DROP</div>
+        </div>
+        <div class="asset-chip chip-a">AAPL</div>
+        <div class="asset-chip chip-b">META</div>
+        <div class="asset-chip chip-c">TSLA</div>
+        <div class="shadow"></div>
+      </div>
+
+      <div class="scroll-cue">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <section id="drop" class="drop-panel reveal">
+      <div class="section-label">LIVE DROP</div>
+      <div class="drop-grid">
+        <div>
+          <div class="status-row">
+            <span class="pulse"></span>
+            <span id="dropStatus">BUILDING POOL</span>
+          </div>
+          <h2>THE NEXT DROP<br><span id="assetName">NVDA</span></h2>
+          <p class="muted">One target. One asset. Every eligible holder shares the drop.</p>
+        </div>
+
+        <div class="meter-card">
+          <div class="meter-top">
+            <span>DROP POOL</span>
+            <span id="percentLabel">84%</span>
+          </div>
+          <div class="amount">
+            <span>$</span><strong id="poolValue">84.27</strong>
+          </div>
+          <div class="bar"><div id="barFill" class="bar-fill"></div></div>
+          <div class="meter-bottom">
+            <span>0</span><span>TARGET $100</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact reveal">
+      <div class="impact-number"><span>$</span><strong id="totalDropped">12,482</strong></div>
+      <div class="impact-copy">
+        <span>TOTAL DROPPED</span>
+        <p>Not points. Not fake balances. Confirmed distributions only.</p>
+      </div>
+    </section>
+
+    <section id="how" class="how reveal">
+      <div class="section-label">HOW IT WORKS</div>
+      <h2>THREE MOVES.<br>THAT'S IT.</h2>
+      <div class="steps">
+        <article class="step-card">
+          <div class="step-no">01</div>
+          <div class="mini-3d coin-stack">
+            <i></i><i></i><i></i>
+          </div>
+          <h3>FEES BUILD</h3>
+          <p>A portion of creator fees accumulates in the Drop Pool.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-no">02</div>
+          <div class="mini-3d cube-wrap"><div class="cube">
+            <b class="front">NVDA</b><b class="back">META</b><b class="right">AAPL</b><b class="left">TSLA</b><b class="top">DROP</b><b class="bottom">$</b>
+          </div></div>
+          <h3>ASSET BUYS</h3>
+          <p>The pool converts into the selected Stock Token when the target is reached.</p>
+        </article>
+        <article class="step-card">
+          <div class="step-no">03</div>
+          <div class="mini-3d wallet-rain">
+            <i>0x8…91</i><i>0x4…2A</i><i>0xB…77</i>
+          </div>
+          <h3>HOLDERS GET IT</h3>
+          <p>The asset is distributed proportionally to eligible holders.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="live reveal">
+      <div class="section-label">LIVE MACHINE</div>
+      <div class="machine-head">
+        <h2>WATCH IT HAPPEN.</h2>
+        <span class="live-badge"><i></i> ONCHAIN</span>
+      </div>
+      <div class="terminal">
+        <div class="terminal-head">
+          <span>STOCKDROP / LIVE FEED</span>
+          <span>ROBINHOOD CHAIN</span>
+        </div>
+        <div id="feed" class="feed"></div>
+      </div>
+    </section>
+
+    <section id="history" class="history reveal">
+      <div class="section-label">DROP HISTORY</div>
+      <div class="history-head">
+        <h2>EVERY DROP<br>LEAVES A RECEIPT.</h2>
+        <p>Only real transaction hashes should appear here.</p>
+      </div>
+      <div class="history-table" id="historyTable">
+        <div class="history-row head">
+          <span>DROP</span><span>ASSET</span><span>VALUE</span><span>HOLDERS</span><span>TX</span>
+        </div>
+        <div class="history-row placeholder">
+          <span>—</span><span>WAITING FOR LIVE DATA</span><span>—</span><span>—</span><span>—</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="final reveal">
+      <div class="falling-word">DROP</div>
+      <div class="final-copy">
+        <span>STOCKDROP</span>
+        <h2>HOLD THE TOKEN.<br>GET THE DROP.</h2>
+        <p>Simple on purpose.</p>
+        <div class="hero-actions">
+          <button class="primary" id="copyCa2">COPY CA</button>
+          <a class="ghost" href="#" id="xLink">X / TWITTER</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>STOCKDROP © 2026</span>
+    <span>BUILT ON ROBINHOOD CHAIN</span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
