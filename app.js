@@ -1,10 +1,10 @@
 
 const ASSET_IMAGES = {
-  nvda: './assets/nvda.webp',
-  meta: './assets/meta.webp',
-  aapl: './assets/aapl.webp',
-  amzn: './assets/amzn.webp',
-  block: './assets/block.webp'
+  nvda: './nvda.webp',
+  meta: './meta.webp',
+  aapl: './aapl.webp',
+  amzn: './amzn.webp',
+  block: './block.webp'
 };
 
 const ASSETS = {
