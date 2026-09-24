@@ -49,7 +49,10 @@ const ASSETS = {
 const CONFIG = {
   contractAddress: 'COMING_SOON',
   xUrl: '#',
-  apiBase: ''
+  apiBase: '',
+  predictedToken: '',
+  pairLabel: '',
+  rewardRule: ''
 };
 
 const $ = s => document.querySelector(s);
@@ -181,3 +184,15 @@ currentAssetKey = '';
 setAsset('nvda');
 loadLive();
 if(CONFIG.apiBase) setInterval(loadLive, 15000);
+
+function renderVerify(){
+  const token = document.querySelector('#verifyToken');
+  const pair = document.querySelector('#verifyPair');
+  const rule = document.querySelector('#verifyRule');
+  const statusEl = document.querySelector('#verifyStatus');
+  if(token && CONFIG.predictedToken) token.textContent = CONFIG.predictedToken;
+  if(pair && CONFIG.pairLabel) pair.textContent = CONFIG.pairLabel;
+  if(rule && CONFIG.rewardRule) rule.textContent = CONFIG.rewardRule;
+  if(statusEl && CONFIG.contractAddress !== 'COMING_SOON') statusEl.textContent = 'LIVE';
+}
+renderVerify();
